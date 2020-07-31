@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CSS3导航菜单</title>
+    <style>
+        a { text-decoration: none; color: #fff }
+        .menu {
+            position: relative;
+            float: left;
+            width: 100px; height: 30px;
+            overflow: hidden;
+            font-family: 微软雅黑;
+            font-size: 12px;
+            cursor: pointer;
+            user-select: none;
+        }
+        .menu > .menu_title_cn,
+        .menu > .menu_title_en {
+            position: absolute;
+            width: 100px; height: 30px;
+            line-height: 30px; 
+            text-align: center;
+            transition: all .3s ease-in-out;
+        }
+        .menu > .menu_title_cn {
+            left: 0; top: 0;
+            z-index: 1;
+            background-color: #63c;
+            color: #fff;
+        }
+        .menu:hover .menu_title_cn {
+            left: 0; top: -30px;
+            opacity: 0;
+        }
+        .menu > .menu_title_en {
+            left: 0; top: -30px;
+            z-index: 2;
+            background-color: #f50;
+            color: #fff;
+            opacity: 0;
+        }
+        .menu:hover > .menu_title_en {
+            left: 0; top: 0;
+            opacity: 1;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="menu">
+            <div class="menu_title_cn">
+                <a href="javascript:void(0)">首页</a>
+            </div>
+            <div class="menu_title_en">
+                <a href="javascript:void(0)">Home</a>
+            </div>
+        </div>
+        <div class="menu">
+            <div class="menu_title_cn">
+                <a href="javascript:void(0)">新闻</a>
+            </div>
+            <div class="menu_title_en">
+                <a href="javascript:void(0)">News</a>
+            </div>
+        </div>
+        <div class="menu">
+            <div class="menu_title_cn">
+                <a href="javascript:void(0)">关于</a>
+            </div>
+            <div class="menu_title_en">
+                <a href="javascript:void(0)">About</a>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

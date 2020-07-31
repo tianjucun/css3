@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>设计图形</title>
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: aqua;
+            transition: 1s;
+            transform-origin: top right;
+            cursor: pointer;
+        }
+
+        .box+.box {
+            margin-top: 8px;
+        }
+
+        .box1:hover {
+            transform: rotate(-45deg);
+        }
+
+        .box2:hover {
+            transform: skewX(45deg)
+        }
+
+        /* 设计星形 */
+        .star {
+            display: block;
+            position: relative;
+            width: 0;
+            height: 0;
+            border-right: 100px solid transparent;
+            border-bottom: 70px solid #fc2e5a;
+            border-left: 100px solid transparent;
+            margin-top: 80px;
+            transform: rotate(35deg);
+        }
+
+        .star::before {
+            content: '';
+            display: block;
+            position: absolute;
+            left: -65px;
+            top: -45px;
+            width: 0;
+            height: 0;
+            border-bottom: 80px solid #fc2e5a;
+            border-left: 30px solid transparent;
+            border-right: 30px solid transparent;
+            transform: rotate(-35deg)
+        }
+
+        .star::after {
+            content: '';
+            display: block;
+            position: absolute;
+            left: -105px;
+            top: 3px;
+            border-bottom: 70px solid #fc2e5a;
+            border-left: 100px solid transparent;
+            border-right: 100px solid transparent;
+            transform: rotate(-70deg);
+        }
+
+        /* 设计心形 */
+        .heart {
+            display: block;
+            position: relative;
+            width: 100px;
+            height: 100px;
+            margin-top: 120px;
+            background-color: #fc2e5a;
+            transform-origin: top right;
+            transform: rotate(-45deg);
+        }
+
+        .heart::before,
+        .heart::after {
+            content: '';
+            display: block;
+            position: absolute;
+            top: -49px;
+            width: 100px;
+            height: 50px;
+            background-color: #fc2e5a;
+            border-radius: 50px 50px 0 0;
+        }
+
+        .heart::after {
+            left: 99px;
+            top: -50px;
+            transform-origin: bottom left;
+            transform: rotate(90deg)
+        }
+
+        /* 心形的第二种实现 */
+        .heart2 {
+            position: relative;
+            width: 120px;
+            margin-top: 120px;
+        }
+
+        .heart2::before,
+        .heart2::after {
+            content: '';
+            position: absolute;
+            left: 70px;
+            top: 0;
+            width: 70px;
+            height: 115px;
+            background-color: red;
+            border-radius: 50px 50px 0 0;
+            transform: rotate(-45deg);
+            transform-origin: 0 100%;
+        }
+
+        .heart2::after {
+            left: 0;
+            transform: rotate(45deg);
+            transform-origin: 100% 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 菱形 -->
+    <div class="box box1"></div>
+    <!-- 平行四边形 -->
+    <div class="box box2"></div>
+    <!-- 星形 -->
+    <div class="star"></div>
+    <!-- 心形 -->
+    <div class="heart"></div>
+    <!-- 心形 -->
+    <div class="heart2"></div>
+</body>
+
+</html>

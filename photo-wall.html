@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>照片墙</title>
+    <style>
+        ul { margin: 0; padding: 0; list-style: none; }
+        a { text-decoration: none; }
+        ul.img_wrap .img { display: inline;  font-size: 0; }
+        ul.img_wrap a {
+            float: left;
+            padding: 12px;
+            margin: 0 0 50px 60px;
+            font-size: 16px;
+            text-align: center;
+            color: #333;
+            box-shadow: 0 3px 6px rgba(0, 0, 0, .25);
+            transition: transform .15s linear;
+            transform: rotate(-2deg);
+        }
+        ul.img_wrap img {
+            display: block;
+            height: 100px;
+            border: none;
+            margin-bottom: 12px;
+        }
+        ul.img_wrap a::after {
+            content: attr(title);
+        }
+        ul.img_wrap li:nth-child(even) a {
+            transform: rotate(10deg);
+        }
+        ul.img_wrap li a:hover {
+            transform: scale(1.25);
+            box-shadow: 0 3px 6px rgba(0, 0, 0, .5);
+        }
+    </style>
+</head>
+
+<body>
+    <ul class="img_wrap">
+        <li class="img">
+            <a href="javascript:void(0)" title="相识"><img src="./img/001.jpg" alt="相识" /></a>
+        </li>
+        <li class="img">
+            <a href="javascript:void(0)" title="相知"><img src="./img/001.jpg" alt="相知" /></a>
+        </li>
+        <li class="img">
+            <a href="javascript:void(0)" title="自信"><img src="./img/001.jpg" alt="自信" /></a>
+        </li>
+    </ul>
+</body>
+
+</html>

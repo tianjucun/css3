@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>冒泡按钮</title>
+    <style>
+        /* 设计冒泡按钮 */
+        .button {
+            display: inline-block;
+            position: relative;
+            padding: 10px 20px;
+            /* 增加按钮内空间 */
+            margin: 180px 0 0 50px;
+            background-repeat: no-repeat;
+
+            /* 下面两个规则是回退, 以防浏览器不支持多重背景 */
+            background-position: bottom left;
+            background-image: url('./img/button_bg.png');
+
+            /* 多重背景 */
+            background-position: bottom left, top right, 0 0, 0 0;
+            background-clip: border-box;
+
+            font: 15px Calibri, Arial, sans-serif;
+            text-align: center;
+            text-decoration: none !important;
+            vertical-align: baseline;
+            white-space: nowrap;
+            border-radius: 8px;
+
+            /* 添加1像素的高亮效果 */
+            box-shadow: 0 0 1px #fff inset;
+
+            /* 半透明的文本阴影 */
+            text-shadow: 1px 1px 0 rgba(255, 255, 255, .4);
+            transition: background-position 1s;
+            cursor: pointer;
+            /* 禁止文字选中 */
+            user-select: none;
+        }
+
+        /* 设计指针悬浮时的按钮样式 */
+        .button:hover {
+            background-position: top left;
+            background-position: top left, bottom right, 0 0, 0 0;
+        }
+
+        /* 设计按钮点击时下沉 */
+        .button:active {
+            bottom: -1px;
+        }
+
+        /* 设计按钮大小号类样式 */
+        .button.button_big {
+            font-size: 30px
+        }
+
+        .button.button_medium {
+            font-size: 18px;
+        }
+
+        .button.button_samll {
+            font-size: 13px;
+        }
+
+        /* 设计圆角按钮类样式 */
+        .button.button.rounded {
+            border-radius: 4em;
+        }
+
+        /* 设计按钮主题类样式 */
+        .button_blue.button {
+            background-color: #48b5f2;
+            background-image: url(./img/button_bg.png), url(./img/button_bg.png),
+                radial-gradient(center bottom, circle, rgba(89, 208, 244, 1) 0, rgba(89, 208, 244, 0) 100px),
+                linear-gradient(#4fbbf7, #3faeeb);
+            color: #0f4b6d !important;
+            /* 让按钮显的更加骨感 */
+            border: 1px solid #84acc3 !important;
+        }
+
+        .button_blue.button:hover {
+            background-color: #63c7fe;
+            background-image: url(./img/button_bg.png), url(./img/button_bg.png),
+                radial-gradient(center bottom, circle, rgba(109, 217, 250, 1) 0, rgba(109, 217, 250, 0) 100px),
+                linear-gradient(#63c7fe, #58bef7);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 冒泡按钮 -->
+    <a class="button button_big button_blue">按钮</a>
+</body>
+
+</html>
